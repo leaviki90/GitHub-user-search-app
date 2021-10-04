@@ -106,8 +106,7 @@
 @media (min-width: 1440px) {
   .container {
     max-width: 730px;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
   }
   header {
     width: 730px;
