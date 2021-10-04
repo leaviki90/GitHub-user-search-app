@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="author" content="Violeta Petrović">
+    <meta name="description" content="Github search app">
+    <meta name="keywords" content="html, css,javascript, responsive, API">
+
+    <!-- IOS compatibility -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Github search">
+    <link rel="apple-touch-icon" type="image/png" href="apple-icon-144x144.png">
+
+    <!--Android compatibility-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="aplication-name" content="Github search">
+    <link rel="icon" type="image/png" href="android-icon-192x192.png">
+
+    <link rel="icon" type="image/png" href="favicon-32x32.png">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <title>Github search</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- header -->
+        <header>
+            <h1 class="header-title">devfinder</h1>
+            <div class="header-switch" id="switch" onclick="toggleTheme()">
+                <span id="toggle-text">DARK</span>
+                <img src="css/images/icon-moon.svg" alt="icon-moon" id="toggle-image">
+            </div>
+        </header>
+        <!-- form -->
+        <form action="" id="form" class="form">
+            <div class="form-control" id="form-search">
+                <input type="text" id="search" placeholder="Search GitHub username…">
+                <small class="hidden">No results</small>
+                <img src="css/images/icon-search.svg" alt="icon-search">
+                <button>Search</button>
+            </div>
+        </form>
+        <!-- content -->
+        <div class="content">
+            <div class="content-profile">
+                <div id="avatar">
+                    <img src="css/images/cat.svg" alt="cat">
+                </div>
+                <div class="content-intro">
+                    <div class="content-intro-part1">
+                        <h4 id="github-name">The Octocat</h4>
+                        <a id="github-login">@octocat</a>
+                    </div>
+                    <div class="content-intro-part2">
+                        <p id="github-date">Joined 25 Jan 2011</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-biography">
+                <p id="github-bio">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
+                    volutpat mattis eros.
+                </p>
+            </div>
+            <div class="content-info1">
+                <div>
+                    <p>Repos</p>
+                    <p id="github-repos">8</p>
+                </div>
+                <div>
+                    <p>Followers</p>
+                    <p id="github-followers">3938</p>
+                </div>
+                <div>
+                    <p>Following</p>
+                    <p id="github-following">9</p>
+                </div>
+            </div>
+            <div class="content-info2">
+                <p class="mb16 w50 mb19">
+                    <img src="css/images/icon-location.svg" alt="icon-location" id="img1">
+                    <a class="links link1 text-decor" id="link1">San Francisco</a>
+                </p>
+                <p class="mb16 w50 order2 mb0">
+                    <img src="css/images/icon-website.svg" alt="icon-website" id="img2">
+                    <a href="https://github.blog" class="links link2 text-decor" id="link2"
+                        target="_blank">https://github.blog</a>
+                </p>
+                <p class="mb15 w50 order1">
+                    <img src="css/images/icon-twitter.svg" alt="icon-twitter" class="opacity05" id="img3">
+                    <a href="" class="links link3 opacity05 text-decor" id="link3" target="_blank">Not Available</a>
+                </p>
+                <p class="w50 order3 mb0">
+                    <img src="css/images/icon-company.svg" alt="icon-company" id="img4">
+                    <a href="" class="links link4 text-decor" id="link4" target="_blank">@github</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="main.js" type="text/javascript"></script>
+</body>
+
+</html>
