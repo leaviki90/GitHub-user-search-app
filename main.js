@@ -6,12 +6,11 @@ let textLight = "LIGHT";
 let textDark = "DARK";
 let form = document.getElementById("form");
 
-// function to set a given theme/color-scheme
 function setTheme(themeName) {
   localStorage.setItem("theme", themeName);
   document.documentElement.className = themeName;
 }
-// function to toggle between light and dark theme
+
 function toggleTheme() {
   if (localStorage.getItem("theme") === "theme-dark") {
     setTheme("theme-light");
@@ -24,7 +23,7 @@ function toggleTheme() {
     text.innerText = textLight;
   }
 }
-// Immediately invoked function to set the theme on initial load
+
 (function () {
   if (localStorage.getItem("theme") === "theme-dark") {
     setTheme("theme-dark");
@@ -70,10 +69,10 @@ const fetchData = (originalName) => {
       });
       let Year = new Date(myDateFormat).getFullYear();
       let fullDate = `Joined ${Day} ${Month} ${Year}`;
-      let userLocation = user.location; //null
-      let userWebsite = user.blog; //empty string
-      let userTwitter = user.twitter_username; //null
-      let userCompany = user.company; //null
+      let userLocation = user.location;
+      let userWebsite = user.blog;
+      let userTwitter = user.twitter_username;
+      let userCompany = user.company;
 
       console.log(userCompany);
       let userRepos = user.public_repos;
@@ -122,23 +121,6 @@ const fetchData = (originalName) => {
           document.getElementById("img1").style["opacity"] = "unset";
         }
 
-        if (userCompany !== null) {
-          document
-            .getElementById("link4")
-            .setAttribute(
-              "href",
-              `https://github.com/${userCompany.replace("@", "")}`
-            );
-          document.getElementById("link4").innerText = userCompany;
-          document.getElementById("link4").style["opacity"] = "unset";
-          document.getElementById("img4").style["opacity"] = "unset";
-        } else {
-          document.getElementById("link4").innerText = "Not Available";
-          document.getElementById("link4").style["opacity"] = "0.5";
-          document.getElementById("link4").removeAttribute("href");
-          document.getElementById("img4").style["opacity"] = "0.5";
-        }
-
         if (userWebsite === "") {
           document.getElementById("link2").innerText = "Not Available";
           document.getElementById("link2").style["opacity"] = "0.5";
@@ -163,6 +145,23 @@ const fetchData = (originalName) => {
           document.getElementById("link3").style["opacity"] = "0.5";
           document.getElementById("link3").removeAttribute("href");
           document.getElementById("img3").style["opacity"] = "0.5";
+        }
+
+        if (userCompany !== null) {
+          document
+            .getElementById("link4")
+            .setAttribute(
+              "href",
+              `https://github.com/${userCompany.replace("@", "")}`
+            );
+          document.getElementById("link4").innerText = userCompany;
+          document.getElementById("link4").style["opacity"] = "unset";
+          document.getElementById("img4").style["opacity"] = "unset";
+        } else {
+          document.getElementById("link4").innerText = "Not Available";
+          document.getElementById("link4").style["opacity"] = "0.5";
+          document.getElementById("link4").removeAttribute("href");
+          document.getElementById("img4").style["opacity"] = "0.5";
         }
       }
     });
