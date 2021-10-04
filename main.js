@@ -48,11 +48,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 });
 
 const fetchData = (originalName) => {
-  fetch("https://api.github.com/users/" + originalName, {
-    headers: {
-      Authorization: "token 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",
-    },
-  })
+  fetch("https://api.github.com/users/" + originalName, {})
     .then((result) => result.json())
     .then((data) => {
       console.log(data);
@@ -84,6 +80,8 @@ const fetchData = (originalName) => {
         document.querySelector("small").classList.remove("hidden");
         return;
       } else {
+        document.querySelector("small").classList.add("hidden");
+        document.querySelector("small").classList.remove("visible");
         if (userName === null) {
           document.getElementById("github-name").innerText = userLogin;
         } else {
@@ -92,7 +90,6 @@ const fetchData = (originalName) => {
 
         document.getElementById("github-login").innerText = `@${userLogin}`;
         document.getElementById("github-date").innerText = fullDate;
-
         document.getElementById(
           "avatar"
         ).innerHTML = `<a href="https://www.github.com/${originalName}" target="_blank">
@@ -109,8 +106,7 @@ const fetchData = (originalName) => {
         document.getElementById("github-repos").innerText = userRepos;
         document.getElementById("github-following").innerText = userFollowing;
         document.getElementById("github-followers").innerText = userFollowers;
-        document.querySelector("small").classList.add("hidden");
-        document.querySelector("small").classList.remove("visible");
+
         if (userLocation === null) {
           document.getElementById("link1").innerText = "Not Available";
           document.getElementById("link1").style["opacity"] = "0.5";
