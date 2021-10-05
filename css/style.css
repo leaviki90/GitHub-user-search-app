@@ -12,7 +12,6 @@ html {
 img {
   max-width: 100%;
 }
-
 .theme-light {
   --font-color: #4b6a9b;
   --bg-content-color: #fefefe;
@@ -39,6 +38,22 @@ img {
   --info1-numbers-color: #ffffff;
   --placeholder-color: #ffffff;
   --input-font-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --font-color: #ffffff;
+    --bg-content-color: #1e2a47;
+    --bg-body-color: #141d2f;
+    --h1-font-color: #ffffff;
+    --h4-font-color: #ffffff;
+    --input-focus-color: #ffffff;
+    --date-color: #ffffff;
+    -info1-bg-color: #141d2f;
+    --info1-numbers-color: #ffffff;
+    --placeholder-color: #ffffff;
+    --input-font-color: #fff;
+  }
 }
 
 body {
@@ -181,6 +196,7 @@ header {
 
 .content .content-profile img {
   border-radius: 50%;
+  overflow: hidden;
 }
 .content .content-intro-part1 {
   margin-bottom: 6px;

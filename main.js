@@ -40,7 +40,11 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
   let search = document.getElementById("search").value.trim();
   let originalName = search.split(" ").join("");
-  fetchData(originalName);
+  if (originalName) {
+    fetchData(originalName);
+  } else {
+    alert("You must enter search term");
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -49,9 +53,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 const fetchData = (originalName) => {
   fetch("https://api.github.com/users/" + originalName, {})
-    .then((result) => result.json())
+    .then((response) => {
+      if (response.status >= 200 && response.status <= 299) {
+        return response.json();
+      } else {
+        throw Error(response.status);
+      }
+    })
     .then((data) => {
-      console.log(data);
       let user = data;
       let userId = user.id;
       let userName = user.name;
@@ -69,8 +78,6 @@ const fetchData = (originalName) => {
       let userWebsite = user.blog;
       let userTwitter = user.twitter_username;
       let userCompany = user.company;
-
-      console.log(userCompany);
       let userRepos = user.public_repos;
       let userFollowing = user.following;
       let userFollowers = user.followers;
@@ -160,7 +167,8 @@ const fetchData = (originalName) => {
           document.getElementById("img4").style["opacity"] = "0.5";
         }
       }
-    });
+    })
+    .catch((error) => console.log(error));
 };
 form.addEventListener("keydown", function () {
   document.querySelector("small").classList.add("hidden");
