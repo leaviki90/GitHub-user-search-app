@@ -103,7 +103,7 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .container {
     max-width: 730px;
     padding: 0;
