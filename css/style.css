@@ -263,6 +263,9 @@ header {
 }
 .link4 {
   margin-left: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .opacity05 {
   opacity: 0.5;
