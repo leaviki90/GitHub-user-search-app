@@ -12,7 +12,8 @@ html {
 img {
   max-width: 100%;
 }
-.theme-light {
+
+body {
   --font-color: #4b6a9b;
   --bg-content-color: #fefefe;
   --bg-body-color: #f2f2f2;
@@ -25,8 +26,7 @@ img {
   --placeholder-color: #4b6a9b;
   --input-font-color: #222731;
 }
-
-.theme-dark {
+body.dark-theme {
   --font-color: #ffffff;
   --bg-content-color: #1e2a47;
   --bg-body-color: #141d2f;
@@ -41,7 +41,8 @@ img {
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  /* defaults to dark theme */
+  body {
     --font-color: #ffffff;
     --bg-content-color: #1e2a47;
     --bg-body-color: #141d2f;
@@ -53,6 +54,19 @@ img {
     --info1-numbers-color: #ffffff;
     --placeholder-color: #ffffff;
     --input-font-color: #fff;
+  }
+  body.light-theme {
+    --font-color: #4b6a9b;
+    --bg-content-color: #fefefe;
+    --bg-body-color: #f2f2f2;
+    --h1-font-color: #222731;
+    --h4-font-color: #2b3442;
+    --input-focus-color: #222731;
+    --date-color: #697c9a;
+    --info1-bg-color: #f6f8ff;
+    --info1-numbers-color: #2b3442;
+    --placeholder-color: #4b6a9b;
+    --input-font-color: #222731;
   }
 }
 
@@ -98,6 +112,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 .header-switch span {
   font-weight: 700;
@@ -179,6 +194,7 @@ header {
 .form-control button:active,
 .form-control button:hover {
   background-color: #60abff;
+  cursor: pointer;
 }
 .content {
   padding: 32px 24px 48px;
